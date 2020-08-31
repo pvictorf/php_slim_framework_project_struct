@@ -20,7 +20,7 @@ final class Bootstrap
 
       //Init database driver, by default Eloquent ORM
       $container['db'] = $this->initializeEloquent($settings);
-      #$container['db'] = $this->initializePDO($settings);
+      #$container['db'] = $this->initializePDO();
 
 
       //Init view template engine, by default LeaguePlates
@@ -53,14 +53,12 @@ final class Bootstrap
                'collation'=> 'utf8_unicode_ci',
                'prefix'   => '',
             ],
-            /* Uncoment if you want use monolog */
-            /*
             'logger' => [
               'name' => 'slim-app',
               'level' => \Monolog\Logger::DEBUG,
               'path' => __DIR__ . '/../logs/app.log',
             ],
-            */
+            
          ],
       ];
 
@@ -70,7 +68,7 @@ final class Bootstrap
    /**
     * Initializes ORM Eloquent at app boot
     */
-   private function initializeEloquent($settings): Capsule
+   public function initializeEloquent($settings): Capsule
    {
       $capsule = new Capsule();
       $capsule->addConnection($settings['settings']['db']);
@@ -83,16 +81,15 @@ final class Bootstrap
    /**
    * Initializes PDO driver to database
    */
-   private function initializePDO($config) {
-      $settings = $config['settings'];
+   public function initializePDO() {
  
-      $driver = $settings['db']['driver'];
-      $host   = $settings['db']['host'];
-      $database = $settings['db']['database'];
-      $username = $settings['db']['username'];
-      $password = $settings['db']['password'];
-      $charset = $settings['db']['charset'];
-      $collation = $settings['db']['collation'];
+      $driver = 'mysql';
+      $host   = getenv('MYSQL_HOST');
+      $database = getenv('MYSQL_DBNAME');
+      $username = getenv('MYSQL_USER');
+      $password = getenv('MYSQL_PASS');
+      $charset = 'utf8';
+      $collation = 'utf8_unicode_ci';
 
       $dsn = "$driver:host=$host;dbname=$database;charset=$charset";
       $options = [
@@ -109,7 +106,7 @@ final class Bootstrap
    /**
     * Initializes League/Plates to generate Views templates
     */
-   private function initializeLeaguePlates() {
+   public function initializeLeaguePlates() {
       // Create new Plates instance
       $templates = Engine::create(getenv('PATH_VIEWS_TEMPLATE'), "php");
       $templates->addFolder('partials', getenv('PATH_PARTIALS_TEMPLATE'));
@@ -121,7 +118,7 @@ final class Bootstrap
    /**
     * Initializes Twig to generate Views templates
     */
-   private function initializeTwigTemplates(Container $container): \Slim\Views\Twig
+   public function initializeTwigTemplates(Container $container): \Slim\Views\Twig
    {
       $view = new \Slim\Views\Twig(getenv('PATH_VIEWS_TEMPLATE'), [
          // Enable cache to improve performace
