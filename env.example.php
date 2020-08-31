@@ -1,6 +1,6 @@
 <?php
 //URL
-putenv('PATH_BASE_URL=' . 'https://localhost/public');
+putenv('PATH_BASE_URL=' . 'http://localhost/slim/php_slim_framework_project_struct/public');
 
 //DEBUG
 putenv('DISPLAY_ERROS_DETAILS=' . true);
