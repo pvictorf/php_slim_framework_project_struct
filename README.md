@@ -2,8 +2,8 @@
 Project structure to work with the pre-configured Slim Framework 3, ORM Eloquent and View temple engine(Twig).
 
 # How to install
-  * In terminal run: composer install
-  * Copy env.example.php to env.php and set your environment variables.
+  * In terminal run: **composer install and composer dump-autoload -o**
+  * Copy **env.example.php to env.php** and set your environment variables.
   * Start server typing:  
     - cd path/to/your/main_project
     - php -S localhost:8888
