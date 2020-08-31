@@ -46,6 +46,7 @@ final class SignupController {
       return $response->withJson([
          'success' => true,
          'message' => "User {$newUser->email} was created successfully!",
+         'uuid'    => $newUser->uuid,
          'token'   => $token,
       ]);
    }
