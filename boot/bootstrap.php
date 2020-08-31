@@ -53,12 +53,13 @@ final class Bootstrap
                'collation'=> 'utf8_unicode_ci',
                'prefix'   => '',
             ],
+            /*
             'logger' => [
               'name' => 'slim-app',
               'level' => \Monolog\Logger::DEBUG,
               'path' => __DIR__ . '/../logs/app.log',
             ],
-            
+            */
          ],
       ];
 

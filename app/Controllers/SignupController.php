@@ -5,7 +5,8 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use App\Models\User;
 use App\Repositories\UserRepository;
-use App\Services\authService; 
+use App\Services\AuthService; 
+use App\Services\LogService;
 
 final class SignupController {
 
@@ -32,7 +33,7 @@ final class SignupController {
          $user->hashPassword();
          
          $newUser = $userRepository->create($user);
-         $token = authService::generateToken($newUser->id, $newUser->name, $newUser->email);
+         $token = AuthService::generateToken($newUser->id, $newUser->name, $newUser->email);
 
       } catch(\Exception $err) {
 
@@ -42,6 +43,9 @@ final class SignupController {
          ], 400);
 
       }
+
+      $logger = new LogService();
+      $logger->info("User {$newUser->email} was created successfully!");
 
       return $response->withJson([
          'success' => true,
