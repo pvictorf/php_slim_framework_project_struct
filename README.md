@@ -10,10 +10,13 @@
   * In **boot/bootstrap.php** configure extensions that you want use.
   
 # Models
- * User - Extends eloquent ORM to get all data for your database (see: https://laravel.com/docs/7.x/eloquent)
+ * Extends eloquent ORM to get all data for your database (see: https://laravel.com/docs/7.x/eloquent)
+  
+# Views
+ * Native PHP template system (see: https://platesphp.com/)
  
 # Controllers
- * UserController - They use slim's own Request and Response interfaces (see: http://www.slimframework.com/docs/v3/objects/request.html)
+ * They use slim's own Request and Response interfaces (see: http://www.slimframework.com/docs/v3/objects/request.html)
   
 # Routes
   * [GET] / - Base url, like: http://localhost:8888/
