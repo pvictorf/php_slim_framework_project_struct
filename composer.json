@@ -1,0 +1,15 @@
+{
+   "require": {
+      "slim/slim": "3.*",
+      "tuupola/slim-jwt-auth": "^3.4",
+      "illuminate/database": "~7.1",
+      "league/plates": "v4.0.0-alpha",
+      "ramsey/uuid": "^4.1"
+   },
+   "autoload": {
+      "psr-4": {
+         "Boot\\": "boot/",
+         "App\\": "app/"
+      }
+   }
+}
