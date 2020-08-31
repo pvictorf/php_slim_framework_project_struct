@@ -11,9 +11,9 @@ class Log {
    /**@var Logger */
    private $logger;
 
-   public function __contruct($context = "web") {
+   public function __contruct($context = "web", $table = "log", $addtionalFields = ['user_id', 'user_email']) {
       $pdo = (new Bootstrap)->initializePDO();
-      $this->dbHandler = new MySQLHandler($pdo, "log", array('username', 'userid'), \Monolog\Logger::DEBUG);
+      $this->dbHandler = new MySQLHandler($pdo, $table, $addtionalFields, \Monolog\Logger::DEBUG);
       $this->logger = new Logger($context);
       $this->logger->pushHandler( $this->dbHandler );
    }
