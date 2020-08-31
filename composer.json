@@ -2,7 +2,7 @@
    "require": {
       "slim/slim": "3.*",
       "tuupola/slim-jwt-auth": "^3.4",
-      "monolog/monolog": "2.0.*",
+      "wazaari/monolog-mysql": "^1.0.5",
       "illuminate/database": "~7.1",
       "league/plates": "v4.0.0-alpha",
       "slim/twig-view":"^2.0",
