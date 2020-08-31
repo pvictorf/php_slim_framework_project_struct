@@ -37,32 +37,30 @@ class LogService {
       $this->logger = new Logger($context);
       $this->logger->pushHandler( $this->dbHandler );
       $this->record = implode('; ', [
-         "HTTP_HOST" => $_SERVER["HTTP_HOST"],
-         "REQUEST_URI" => $_SERVER["REQUEST_URI"],
-         "REQUEST_METHOD" => $_SERVER["REQUEST_METHOD"],
-         "HTTP_USER_AGENT" => $_SERVER["HTTP_USER_AGENT"],
-         "REMOTE_ADDR" => $_SERVER["REMOTE_ADDR"],
+         "HTTP_HOST=" . $_SERVER["HTTP_HOST"],
+         "REQUEST_URI=" . $_SERVER["REQUEST_URI"],
+         "REQUEST_METHOD=" . $_SERVER["REQUEST_METHOD"],
+         "HTTP_USER_AGENT=" . $_SERVER["HTTP_USER_AGENT"],
+         "REMOTE_ADDR=" . $_SERVER["REMOTE_ADDR"],
       ]);
    }
 
-   /** Create a info log in database */
+   public function getRecord() {
+      return $this->record;
+   }
+
+   public function getLogger() {
+      return $this->logger;
+   }
+
+   /**
+     * This method created a new info log on database
+     *
+     * @param string $message The log message
+     * @param array  $context The log context
+     */
    public function info($menssage = "", $context = []) {
       $this->logger->info($menssage, $context);
-   }
-
-   /** Create a warning log in database */
-   public function warning($menssage = "", $context = []) {
-      $this->logger->warning($menssage, $context);
-   }
-
-   /** Create a debug log in database */
-   public function debug($menssage = "", $context = []) {
-      $this->logger->debug($menssage, $context);
-   }
-
-   /** Create a alert log in database */
-   public function alert($menssage = "", $context = []) {
-      $this->logger->alert($menssage, $context);
    }
 }
 

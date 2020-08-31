@@ -32,4 +32,12 @@ final class authService {
       return ($expired_at < $now);
    }
 
+   public function registerActivity() {
+      //TODO: Save last activity of user and router
+   }
+
+   public function isOnline() {
+      //TODO: If the last activity is less now + 10 minutes user is Online else Offline
+   }
+
 }

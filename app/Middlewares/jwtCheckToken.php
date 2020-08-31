@@ -2,7 +2,7 @@
 
 namespace App\Middlewares;
 
-use App\Services\authService;
+use App\Services\AuthService;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -19,7 +19,7 @@ final class JwtCheckToken
          return $response->withJson(['message' => 'Token is empty!'], 401);
       }
 
-      if(!authService::checkValidateToken($decodedToken)) {
+      if(!AuthService::checkValidateToken($decodedToken)) {
          return $response->withJson(['message' => 'Token is expired or invalid!'], 401);
       }
 
