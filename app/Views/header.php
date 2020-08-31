@@ -1,3 +1,3 @@
 <header>
-   <hr/>
+   <hr/> 
 </header>
