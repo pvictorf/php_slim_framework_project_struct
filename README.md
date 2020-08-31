@@ -1,13 +1,22 @@
-# slim_framework_eloquent_struct
-Project structure to work with the pre-configured Slim Framework 3, ORM Eloquent and View temple engine(Twig).
+![](exemp_cover.png)
 
 # How to install
-  * In terminal run: **composer install and composer dump-autoload -o**
+  * Run: **composer install and composer dump-autoload -o**
   * Copy **env.example.php to env.php** and set your environment variables.
   * Start server typing:  
     - cd path/to/your/main_project
     - php -S localhost:8888
   * Use insominia or postman to test routes.
+  * In **boot/bootstrap.php** configure extensions that you want use.
+  
+# Models
+ * Extends eloquent ORM to get all data for your database (see: https://laravel.com/docs/7.x/eloquent)
+  
+# Views
+ * Native PHP template system (see: https://platesphp.com/)
+ 
+# Controllers
+ * They use slim's own Request and Response interfaces (see: http://www.slimframework.com/docs/v3/objects/request.html)
   
 # Routes
   * [GET] / - Base url, like: http://localhost:8888/
@@ -15,12 +24,10 @@ Project structure to work with the pre-configured Slim Framework 3, ORM Eloquent
   * [POST] /v1/users - Protected routes that need authentication! 
   Use Bearer token with hash received in /signup (see: https://github.com/tuupola/slim-jwt-auth)
   
-  
-  # Router /signup exemple
+# Router /signup exemple
   ![](exemp_signup.gif)
-    
-  # Router /v1/users exemple using token
+  
+# Router /v1/users exemple using token
   ![](exemp_v1.gif)
 
-# Models
- * User - Extends eloquent ORM to get all data for your database (see: https://laravel.com/docs/7.x/eloquent)
+
