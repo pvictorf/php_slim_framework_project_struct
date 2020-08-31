@@ -10,7 +10,7 @@
   * In **boot/bootstrap.php** configure extensions that you want use.
   
 # Models
- * Extends eloquent ORM to get all data for your database (see: https://laravel.com/docs/7.x/eloquent)
+ * Extends eloquent ORM to connect your database to application (see: https://laravel.com/docs/7.x/eloquent)
   
 # Views
  * Native PHP template system (see: https://platesphp.com/)
