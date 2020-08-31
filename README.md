@@ -1,12 +1,13 @@
 ![](exemp_cover.png)
 
 # How to install
-  * In terminal run: **composer install and composer dump-autoload -o**
+  * Run: **composer install and composer dump-autoload -o**
   * Copy **env.example.php to env.php** and set your environment variables.
   * Start server typing:  
     - cd path/to/your/main_project
     - php -S localhost:8888
   * Use insominia or postman to test routes.
+  * In **boot/bootstrap.php** configure extensions that you want use.
   
 # Routes
   * [GET] / - Base url, like: http://localhost:8888/
