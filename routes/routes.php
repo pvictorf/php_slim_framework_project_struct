@@ -30,11 +30,7 @@ $app->get('/', function(Request $request, Response $response, array $args) {
    //return $response->withRedirect('/signin');
 
    //Send response with View HTML page
-   $data = [
-      'name' => 'pvictorf',
-      'names' => ['<script>alert("Victor")</script>', 'Ronaldo', 'Angelin']
-   ];
-   return $this->view->render('home', $data);
+   return $this->view->render('home', ['name' => 'pvictorf']);
 });
 
 
