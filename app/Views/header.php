@@ -1,4 +1,3 @@
 <header>
-   {{param}}
    <hr/>
 </header>
