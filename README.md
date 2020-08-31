@@ -1,5 +1,4 @@
-# slim_framework_eloquent_struct
-Project structure to work with the pre-configured Slim Framework 3, ORM Eloquent and View temple engine(Twig).
+![](exemp_cover.png)
 
 # How to install
   * In terminal run: **composer install and composer dump-autoload -o**
