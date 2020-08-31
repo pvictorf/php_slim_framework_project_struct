@@ -2,8 +2,10 @@
    "require": {
       "slim/slim": "3.*",
       "tuupola/slim-jwt-auth": "^3.4",
+      "monolog/monolog": "2.0.*",
       "illuminate/database": "~7.1",
       "league/plates": "v4.0.0-alpha",
+      "slim/twig-view":"^2.0",
       "ramsey/uuid": "^4.1"
    },
    "autoload": {
